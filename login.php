@@ -9,7 +9,7 @@ if (isset($_POST['btnLogin']))
         $myaccount =  $_POST['noCuenta'];
         $mypassword =  $_POST['password'];
 
-        $sql = "SELECT * FROM clientes WHERE nombre='$myaccount' and cliente_id='$mypassword'";
+        $sql = "SELECT * FROM clientes WHERE contacto1='$myaccount' and cliente_id='$mypassword'";
         //$sql2 = "SELECT * FROM profesores WHERE cuentaProfesor='$myaccount' and password='$mypassword'";
         $result = ibase_query($conn, $sql);
         $count = ibase_fetch_row($result);
@@ -28,6 +28,7 @@ if (isset($_POST['btnLogin']))
             $_SESSION['Password'] = $mypassword;
             $_SESSION['Nombre'] = $row['nombre'];
             $_SESSION['idFacultad'] = $row['cliente_id'];
+
             $_SESSION['TipoUsuario'] = 'P';
            header("Location: identificacion.php");
         }

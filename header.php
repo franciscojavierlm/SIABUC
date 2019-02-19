@@ -51,10 +51,10 @@
                             ?>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Administrador</a></li>
+                                <li><a href="#">r</a></li>
                                 <li><a href="identificacion.php">Identificación</a></li>
                                 <!--<li><a href="#">Lista de Solicitudes</a></li>-->
-                                <li><a href="#">LSCU</a></li>
+                                <li><a href="#"></a></li>
                                 <!--<li><a href="#">LSCU Review</a></li>
                                 <li><a href="#">Sincronización</a></li>-->
                                 <li><a href="cerrarsesion.php">Cerrar Sesión (<?php echo $_SESSION['NoCuenta'] ?>)</a></li>
@@ -65,14 +65,14 @@
                             ?>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Profesor</a></li>
-                                <li><a href="identificacion.php">Identificación</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="identificacion.php">Solicitar Serivicio</a></li>
                                 <!--<li><a href="#">Búsqueda</a></li>-->
-                                <li><a href="#">LSC</a></li>
-                                <li><a href="solicitudes.php">Solicitudes</a></li>
+                                <!--<li><a href="#"></a></li>-->
+                                <li><a href="solicitudes.php">Mis Solicitudes</a></li>
                                 <!--<li><a href="cerrarsesion.php">Cerrar Sesión</a></li>-->
                                 <!--<li><a href="cerrarsesion.php">Cerrar Sesión (<?php /*echo $_SESSION['NoCuenta'] */?>)</a></li>-->
-                                <li><a href="cerrarsesion.php">Cerrar Sesión (<?php echo $_SESSION['NoCuenta'] ?>)</a></li>
+                                <li><a href="cerrarsesion.php">Cerrar Sesión   (<?php echo $_SESSION['NoCuenta'] ?>)</a></li>
                             </ul>
 
                             <?php

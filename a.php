@@ -1,22 +1,11 @@
 <?php
 include("cfg.php");
-$myaccount =  "prueba";
-$mypassword = "9276";
 
-$sql = "SELECT * FROM clientes WHERE nombre='$myaccount' and cliente_id='$mypassword'";
-
-$result = ibase_query($conn, $sql);
-$si = ibase_fetch_row($result);
-
-//echo is_array($si) ? 'Array' : 'No es un array';
-
-if($si){
-  echo "pasa";
-}else{
-  echo "nel";
-}
-
-//echo count($si);
-//echo $count;
-
- ?>
+    //mysqli_set_charset($db, "utf8");
+    $sql = "SELECT nombre FROM clientes";
+    $res=ibase_query($conn,$sql);
+    while($row=ibase_fetch_assoc($res))
+    {
+     print_r($row['NOMBRE']);
+    }
+?>

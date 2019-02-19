@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('header.php'); 
+include('header.php');
 ?>
 
 
@@ -47,18 +47,18 @@ include('header.php');
         <div class="inner">
             <div class="container">
                 <div class="row">
-                    <div class="title" style="margin-top: -55px;">      
+                    <div class="title" style="margin-top: -55px;">
                         <h1>Registro Bibliográfico Automatizado</h1>
-                      </div>   
+                      </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </section>
 
 
     <div class="jumbotron" style="background-color: white;">
       <div class="container">
-      <div class="title">      
+      <div class="title">
               <h1>RAB-SIABUC</h1>
       </div>
       </div>
@@ -120,6 +120,3 @@ include('header.php');
 
 
 <?php include('footer.php'); ?>
-
-
-

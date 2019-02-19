@@ -3,10 +3,7 @@ session_start();
 include("cfg.php");
 include('header.php');
 ?>
-
 <img src="assets/img/img_banner.png" class="img-responsive" style="margin-top: -20px;">
-
-
     <section class="brake-line" id="page-head" style="margin-top: 20px; margin-bottom: 50px;">
         <div class="inner">
             <div class="container">
@@ -18,10 +15,6 @@ include('header.php');
             </div>
         </div>
     </section>
-
-
-
-
 
 <?php
     if (isset($_SESSION['NoCuenta']))
@@ -46,13 +39,13 @@ include('header.php');
                                                 <option>Selecciona...</option>
 
                                                 <?php
-                                                    mysqli_set_charset($db, "utf8");
-                                                    $sql = "SELECT idFacultad, nombreF FROM facultades WHERE idFacultad = $idFacultad";
-                                                    $res=mysqli_query($db,$sql);
-                                                    while($row=mysqli_fetch_array($res))
+                                                    //mysqli_set_charset($db, "utf8");
+                                                    $sql = "SELECT cliente_id, nombre FROM clientes WHERE cliente_id = '$idFacultad'";
+                                                    $res=ibase_query($conn,$sql);
+                                                    while($row=ibase_fetch_row($res))
                                                     {
                                                         ?>
-                                                        <option value="<?php echo $row["idFacultad"]; ?>"><?php echo $row["nombreF"]; ?></option>
+                                                        <option value="<?php echo $row["cliente_id"]; ?>"><?php echo $row["nombre"]; ?></option>
                                                         <?php
                                                     }
                                                 ?>
@@ -128,13 +121,13 @@ include('header.php');
                                                 <option>Selecciona...</option>
 
                                                 <?php
-                                                    mysqli_set_charset($db, "utf8");
-                                                    $sql = "SELECT idFacultad, nombreF FROM facultades";
-                                                    $res=mysqli_query($db,$sql);
-                                                    while($row=mysqli_fetch_array($res))
+                                                    //mysqli_set_charset($db, "utf8");
+                                                    $sql = "SELECT nombre FROM articulos";
+                                                    $res=ibase_query($conn,$sql);
+                                                    while($row=ibase_fetch_assoc($res))
                                                     {
                                                         ?>
-                                                        <option value="<?php echo $row["idFacultad"]; ?>"><?php echo $row["nombreF"]; ?></option>
+                                                        <option value="<?php echo $row["NOMBRE"]; ?>"><?php echo $row["NOMBRE"]; ?></option>
                                                         <?php
                                                     }
                                                 ?>
