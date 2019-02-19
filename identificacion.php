@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("cfg.php");
 include('header.php');
 ?>
 
@@ -11,29 +11,29 @@ include('header.php');
         <div class="inner">
             <div class="container">
                 <div class="row">
-                    <div class="title" style="margin-top: -55px;">      
+                    <div class="title" style="margin-top: -55px;">
                         <h1>Identificación</h1>
-                      </div>   
+                      </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </section>
 
 
 
-            
-            
+
+
 <?php
-    if (isset($_SESSION['NoCuenta'])) 
+    if (isset($_SESSION['NoCuenta']))
         {
-        if ($_SESSION['TipoUsuario'] == 'A') 
+        if ($_SESSION['TipoUsuario'] == 'A')
             {
-            
+
             $idFacultad = $_SESSION['idFacultad'];
-            ?>  
-                <form name="frmIdentificacion" action="profesoresview.php" method="post">        
+            ?>
+                <form name="frmIdentificacion" action="profesoresview.php" method="post">
                     <div class="container">
-                        <div class="col-md-6 col-md-offset-3">  
+                        <div class="col-md-6 col-md-offset-3">
                             <!--FORMULARIO-->
                             <form class="form-horizontal">
                                 <fieldset>
@@ -55,7 +55,7 @@ include('header.php');
                                                         <option value="<?php echo $row["idFacultad"]; ?>"><?php echo $row["nombreF"]; ?></option>
                                                         <?php
                                                     }
-                                                ?>      
+                                                ?>
 
                                             </select>
                                         </div>
@@ -86,21 +86,21 @@ include('header.php');
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdFacultad" name="Facultad" type="text" />            
+                                        <input type="hidden" id="txtIdFacultad" name="Facultad" type="text" />
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdCarrera" name="Carrera" type="text" />            
+                                        <input type="hidden" id="txtIdCarrera" name="Carrera" type="text" />
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdMateria" name="Materia" type="text" />            
+                                        <input type="hidden" id="txtIdMateria" name="Materia" type="text" />
                                     </div>
 
 
                                     <div align="center">
                                         <button class="btn btn-green" style="font-family: Raleway, sans-serif; color : #FFF;" type="submit" >Indentificar</button>
-                                    </div>                   
+                                    </div>
 
                                 </fieldset>
                             </form>
@@ -108,14 +108,14 @@ include('header.php');
                     </div>
                 </form>
             <?php
-            } 
+            }
                 else
-            { 
+            {
             ?>
 
-                <form name="frmIdentificacion" action="busqueda.php" method="post">        
+                <form name="frmIdentificacion" action="busqueda.php" method="post">
                     <div class="container">
-                        <div class="col-md-6 col-md-offset-3">  
+                        <div class="col-md-6 col-md-offset-3">
                             <!--FORMULARIO-->
                             <form class="form-horizontal">
                                 <fieldset>
@@ -137,7 +137,7 @@ include('header.php');
                                                         <option value="<?php echo $row["idFacultad"]; ?>"><?php echo $row["nombreF"]; ?></option>
                                                         <?php
                                                     }
-                                                ?>      
+                                                ?>
 
                                             </select>
                                         </div>
@@ -168,21 +168,21 @@ include('header.php');
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdFacultad" name="Facultad" type="text" />            
+                                        <input type="hidden" id="txtIdFacultad" name="Facultad" type="text" />
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdCarrera" name="Carrera" type="text" />            
+                                        <input type="hidden" id="txtIdCarrera" name="Carrera" type="text" />
                                     </div>
 
                                     <div class="text_input">
-                                        <input type="hidden" id="txtIdMateria" name="Materia" type="text" />            
+                                        <input type="hidden" id="txtIdMateria" name="Materia" type="text" />
                                     </div>
 
 
                                     <div align="center">
                                         <button class="btn btn-green" style="font-family: Raleway, sans-serif; color : #FFF;" type="submit" >Indentificar</button>
-                                    </div>                   
+                                    </div>
 
                                 </fieldset>
                             </form>
@@ -191,8 +191,8 @@ include('header.php');
                 </form>
             <?php
             }
-        } 
-        else 
+        }
+        else
         {
         ?>
             <ul class="nav navbar-nav navbar-right">
@@ -201,16 +201,16 @@ include('header.php');
             <?php
         }
 ?>
-           
-    
-          
+
+
+
 <script type="text/javascript">
         function change_facultad()
         {
                 var xmlhttp=new XMLHttpRequest();
                 xmlhttp.open("GET","ajax.php?facultad="+document.getElementById("facultadyy").value,false);
                 xmlhttp.send(null);
-                //alert(xmlhttp.responseText); 
+                //alert(xmlhttp.responseText);
                 document.getElementById("carrera").innerHTML=xmlhttp.responseText;
                 //alert(document.getElementById("facultadyy").value);
 
@@ -237,11 +237,11 @@ include('header.php');
                 xmlhttp.send(null);
                 //alert(xmlhttp.responseText);
                 document.getElementById("asignatura").innerHTML=xmlhttp.responseText;
-                //alert(document.getElementById("carrerayy").value);  
+                //alert(document.getElementById("carrerayy").value);
 
                 var carrera = document.getElementById("carrerayy").value; //alert(carrera);
                 idCarrera = carrera;
-                document.getElementById("txtIdCarrera").value = idCarrera;         
+                document.getElementById("txtIdCarrera").value = idCarrera;
         }
 
 
@@ -252,13 +252,11 @@ include('header.php');
                 var materia = document.getElementById("asignaturayy").value; //alert(materia);
                 idMateria = materia;
                 document.getElementById("txtIdMateria").value = idMateria;
-        }        
-</script>  
-    
+        }
+</script>
 
 
-<?php 
+
+<?php
 include('footer.php');
 ?>
-
-
