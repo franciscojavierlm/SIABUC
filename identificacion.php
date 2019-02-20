@@ -3,13 +3,13 @@ session_start();
 include("cfg.php");
 include('header.php');
 ?>
-<img src="assets/img/img_banner.png" class="img-responsive" style="margin-top: -20px;">
-    <section class="brake-line" id="page-head" style="margin-top: 20px; margin-bottom: 50px;">
+<!--<img src="assets/img/img_banner.png" class="img-responsive" style="margin-top: -20px;"> -->
+    <section class="brake-line" id="page-head" style="margin-top: 20px; margin-bottom: 30px;">
         <div class="inner">
             <div class="container">
                 <div class="row">
                     <div class="title" style="margin-top: -55px;">
-                        <h1>Identificación</h1>
+                        <h1>Solicitar Servicio</h1>
                       </div>
                 </div>
             </div>
@@ -113,15 +113,68 @@ include('header.php');
                             <form class="form-horizontal">
                                 <fieldset>
 
+
+
+                                  <!-- Select Basic -->
+                                  <div class="form-group">
+
+                                      <label class="col-md-2 control-label" for="selectbasic">
+                                          Nombre:
+                                      </label>
+
+                                      <fieldset id="myAutor" >
+                                          <div class="col-md-9">
+                                              <input class="form-control" placeholder="Nombre del Servicio" type="text" name="authors" id="authors" autofocus />
+                                          </div>
+                                      </fieldset>
+
+                                  </div>
+                                  <div class="form-group">
+
+                                      <label class="col-md-2 control-label" for="selectbasic">
+                                        Descripción:
+                                      </label>
+
+                                      <fieldset id="myAutor" >
+                                          <div class="col-md-9">
+
+                                            <textarea placeholder="Descripción del Servicio"  class="form-control"  rows="4" cols="50"  name="authors" id="authors" autofocus>
+                                              
+                                            </textarea>
+                                              <!--<input class="form-control" placeholder="Descripción del Servicio" type="text" name="authors" id="authors" autofocus />-->
+                                          </div>
+                                      </fieldset>
+
+                                  </div>
+                                  <div class="form-group">
+                                  <label class="col-md-2 control-label" for="selectbasic">Servicio:</label>
+                                      <div class="col-md-9">
+                                          <div id="carrera">
+                                              <select  class="form-control">
+                                                      <option>Selecciona el Tipo Servicio</option>
+                                                      <?php
+                                                          $sql = "SELECT nombre FROM articulos";
+                                                          $res=ibase_query($conn,$sql);
+                                                          while($row=ibase_fetch_assoc($res))
+                                                          {
+                                                              ?>
+                                                              <option value="<?php echo $row["NOMBRE"]; ?>"><?php echo $row["NOMBRE"]; ?></option>
+                                                              <?php
+                                                          }
+                                                      ?>
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </div>
+
                                     <!-- Select Basic -->
                                     <div class="form-group">
-                                    <label class="col-md-2 control-label" for="selectbasic">Facultad</label>
+                                    <label class="col-md-2 control-label" for="selectbasic">Prioridad:</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="facultadyy" onchange="change_facultad()">
-                                                <option>Selecciona...</option>
+                                                <option>Selecciona la Prioridad</option>
 
                                                 <?php
-                                                    //mysqli_set_charset($db, "utf8");
                                                     $sql = "SELECT nombre FROM articulos";
                                                     $res=ibase_query($conn,$sql);
                                                     while($row=ibase_fetch_assoc($res))
@@ -136,19 +189,9 @@ include('header.php');
                                         </div>
                                     </div>
 
-                                    <!-- Select Basic -->
-                                    <div class="form-group">
-                                    <label class="col-md-2 control-label" for="selectbasic">Carrera</label>
-                                        <div class="col-md-9">
-                                            <div id="carrera">
-                                                <select  class="form-control">
-                                                        <option>Selecciona...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- Select Basic-->
 
-                                    <!-- Select Basic -->
+                                    <!-- Select Basic
                                     <div class="form-group">
                                     <label class="col-md-2 control-label" for="selectbasic">Asignatura</label>
                                         <div class="col-md-9">
@@ -158,7 +201,7 @@ include('header.php');
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                     <div class="text_input">
                                         <input type="hidden" id="txtIdFacultad" name="Facultad" type="text" />
@@ -200,11 +243,11 @@ include('header.php');
 <script type="text/javascript">
         function change_facultad()
         {
-                var xmlhttp=new XMLHttpRequest();
-                xmlhttp.open("GET","ajax.php?facultad="+document.getElementById("facultadyy").value,false);
-                xmlhttp.send(null);
+              //  var xmlhttp=new XMLHttpRequest();
+              //  xmlhttp.open("GET","ajax.php?facultad="+document.getElementById("facultadyy").value,false);
+                //xmlhttp.send(null);
                 //alert(xmlhttp.responseText);
-                document.getElementById("carrera").innerHTML=xmlhttp.responseText;
+              //  document.getElementById("carrera").innerHTML=xmlhttp.responseText;
                 //alert(document.getElementById("facultadyy").value);
 
                 var facultad = document.getElementById("facultadyy").value; //alert(facultad);
@@ -212,22 +255,13 @@ include('header.php');
                 //Display the new price to the user
                 document.getElementById("txtIdFacultad").value = idFacultad;
 
-                if(document.getElementById("facultadyy").value == "Selecciona...")
-                {
-                    document.getElementById("asignatura").innerHTML="<select class='form-control'><option>Selecciona...</option></select>";
-                }
-                else
-                {
-                    document.getElementById("asignatura").innerHTML="<select class='form-control'><option>Selecciona...</option></select>";
-                }
-
         }
 
         function change_carrera()
         {
                 var xmlhttp=new XMLHttpRequest();
-                xmlhttp.open("GET","ajax.php?carrera="+document.getElementById("carrerayy").value,false);
-                xmlhttp.send(null);
+                //xmlhttp.open("GET","ajax.php?carrera="+document.getElementById("carrerayy").value,false);
+              //  xmlhttp.send(null);
                 //alert(xmlhttp.responseText);
                 document.getElementById("asignatura").innerHTML=xmlhttp.responseText;
                 //alert(document.getElementById("carrerayy").value);

@@ -2,7 +2,7 @@
 <div class="container">
 
 <div class="container">
-  <div class="row">
+<!--  <div class="row">
   </div>
   <div class='row'>
     <div class='col-md-12'>
@@ -12,54 +12,54 @@
             <div class="row">
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l1.png"></a>
-              </div>          
+              </div>
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l2.png"></a>
               </div>
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l3.png"></a>
-              </div>       
+              </div>
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l4.png"></a>
-              </div>   
+              </div>
             </div>
           </div>
           <div class="item">
             <div class="row">
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l5.png"></a>
-              </div>          
+              </div>
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l6.png"></a>
               </div>
               <div class="col-md-3">
                   <a class="thumbnail"><img alt="" src="assets/img/img_l7.png"></a>
-              </div>       
+              </div>
               <div class="col-md-3">
                   <a class="thumbnail" href="#"><img alt="" src="assets/img/img_l8.png"></a>
-              </div>       
+              </div>
             </div>
           </div>
         </div>
         <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
         <a data-slide="next" href="#media" class="right carousel-control">›</a>
-      </div>                          
+      </div>
     </div>
   </div>
 </div>
 
+</div>-->
 </div>
-</div>
-<!--/.CAROUSEL2-->
 
-<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">     
+
+<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 <!--/.FOOTER 1 START FROM HERE-->
 <footer>
   <div class="container" style="margin-top: -30px;">
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft" style="margin-top: 58px;">
           <div class="logofooter"> <img src="assets/img/img_udec_logo_footer.png" width="300"  class="img-responsive"> </div><hr>
-        <p><p align=justify>SIABUC es un software auxiliar en las labores cotidianas de un centro de información o biblioteca, ya sea universitaria, pública o particular.</p></p>   
+        <p><p align=justify>SIABUC es un software auxiliar en las labores cotidianas de un centro de información o biblioteca, ya sea universitaria, pública o particular.</p></p>
       </div>
       <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7"> Links Generales</h6>
@@ -85,7 +85,7 @@
         <div class="logofooter"> Contáctanos</div>
         <p><i class="fa fa-map-pin"></i> Av. Gonzálo de Sandoval # 444, Colonia Las Víboras, C.P. 28040, Colima, Colima, México</p>
         <p><i class="fa fa-phone"></i> Teléfono: +52 (312) 316-1121</p>
-        <p><i class="fa fa-envelope"></i> E-mail : siabuc@ucol.mx</p>     
+        <p><i class="fa fa-envelope"></i> E-mail : siabuc@ucol.mx</p>
       </div>
     </div>
   </div>
